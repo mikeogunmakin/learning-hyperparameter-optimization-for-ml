@@ -110,7 +110,7 @@ Gradient Boosting Machines (GBMs) e.g. XGBoost
     - **Lower learning rate** → slower learning, better generalisation
     - Helps reduce **overfitting**
 
-# ⚙️ Hyperparameters in Neural Networks & Other ML Models
+## ⚙️ Hyperparameters in Neural Networks & Other ML Models
 
 Neural Networks – Common Hyperparameters
 - `num_layers` – number of layers in the network
