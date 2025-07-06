@@ -43,3 +43,38 @@
     - Aggregates performance across all thresholds.
     - Range: 0.5 (random guess) to 1.0 (perfect classifier).
     - Higher is better.
+- Loss Function (Cross-Entropy)
+  - The loss function in classification models measures how far the model's predicted probabilities are from the true class labels — it's what the model tries to minimise during training.
+  - General form: Loss = -[y * log(p) + (1 - y) * log(1 - p)]
+  - Used for model optimisation.
+  - Penalises incorrect confident predictions.
+
+## Regression Metrics
+
+## 🔍 Regression Metrics Summary
+- Evaluate how close the model’s continuous predictions (\( \hat{y} \)) are to the true values (\( y \)).
+- **Goal**: Minimise prediction error.
+
+### 📊 Common Regression Metrics
+
+- **Mean Squared Error (MSE):**  
+  - Average of squared differences between predictions and actual values.  
+  - Penalises larger errors more.  
+  - `MSE = mean((y - ŷ)²)` 
+
+- **Root Mean Squared Error (RMSE):**  
+  - Square root of MSE.  
+  - Brings error back to the same scale as the target variable.  
+  - `RMSE = sqrt(MSE)`
+  - takes it back to original scale
+
+- **Mean Absolute Error (MAE):**  
+  - Average of absolute differences between predictions and true values.  
+  - Less sensitive to large errors than MSE.  
+  - `MAE = mean(|y - ŷ|)`
+
+- **R-squared (R²):**  
+  - Proportion of variance in the target variable explained by the model.  
+  - `R² = 1 - (SS_res / SS_tot)`  
+  - Values range from `0` to `1`; higher is better.  
+  - `R² = 0.4` means the model explains 40% of the variance.
