@@ -8,7 +8,15 @@
   - With more data, practitioners are tempted (and justified) to use more complex models (deep nets, ensembles, etc.).
   - Complex models can memorize noise or overfit localized patterns
  
-  
+## Bias vs Variance
+
+
+- If the model is very simple, imagine that we have a few trees in a random forest or maybe a linear regression in a dataset that has more complex relationships than linear, what we're going to findis that the error that the model makes in the train set is going to be high
+and the error that the model makes in the test set is also high.And this means that the model is biased or, in other words, that is under-fitting. So the model that we built is not able to predict the target from the data.
+
+- As we increase the complexity of the model, say as we increase the number of trees in the random forestor we pass from a linear to a polynomial of higher degree model, we're going to see that the generalization error of the model in the train set is going to decrease because now the model is better able to predict the target from the data.
+
+And the generalization error in the test setis also going to decrease,but it's going to decrease to a certain point.As we increase the complexity of our model,this model is better able to predict the training set, but now is not as good as predicting other datasets than the training setbecause it is overfitted to this train set,so it learns too much from the noise. And in this area here,we say that the model is over-fitting or it shows high variance.
 
 ---
 
