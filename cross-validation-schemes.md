@@ -10,13 +10,38 @@
  
 ## Bias vs Variance
 
+![Diagram](./images/bias-vs-variance.png) 
 
-- If the model is very simple, imagine that we have a few trees in a random forest or maybe a linear regression in a dataset that has more complex relationships than linear, what we're going to findis that the error that the model makes in the train set is going to be high
-and the error that the model makes in the test set is also high.And this means that the model is biased or, in other words, that is under-fitting. So the model that we built is not able to predict the target from the data.
+This chart shows how **generalization error** changes with **model complexity**, helping us understand the trade-off between **bias** and **variance**.
 
-- As we increase the complexity of the model, say as we increase the number of trees in the random forestor we pass from a linear to a polynomial of higher degree model, we're going to see that the generalization error of the model in the train set is going to decrease because now the model is better able to predict the target from the data.
+### 🔵 Training Set Error (Blue Line)
+- Decreases steadily as model complexity increases.
+- A more complex model fits the training data better.
 
-And the generalization error in the test setis also going to decrease,but it's going to decrease to a certain point.As we increase the complexity of our model,this model is better able to predict the training set, but now is not as good as predicting other datasets than the training setbecause it is overfitted to this train set,so it learns too much from the noise. And in this area here,we say that the model is over-fitting or it shows high variance.
+### 🔴 Test Set Error (Red Line)
+- Decreases initially (improving generalization), then increases again.
+- This U-shaped curve shows where **overfitting begins**.
+
+### Key Zones (Refer to Chart):
+
+- **Left Side – Underfitting (High Bias)**:
+  - Simple models (e.g., linear regression, few trees).
+  - **High training and test errors**.
+  - Model fails to capture data patterns.
+
+- **Middle – Just Right**:
+  - Balanced model complexity.
+  - **Lowest test error** → best generalization.
+  - Ideal model capacity for the task.
+
+- **Right Side – Overfitting (High Variance)**:
+  - Very complex models (e.g., deep trees, high-degree polynomials).
+  - **Low training error**, but **test error increases**.
+  - Model memorizes training data and fails to generalize.
+
+
+- The goal is to find the “sweet spot” in model complexity where test error is minimized — this is where **bias and variance are balanced**.
+
 
 ---
 
