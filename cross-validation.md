@@ -40,7 +40,8 @@
 - **Description**:
   - Split training data into **k folds** (e.g., 5-fold).
   - Train and validate k times, rotating the validation fold.
-  - Use **average performance** across folds to select hyperparameters.
+  - Use **average performance** across folds to select hyperparameters space
+    
   - Keep test set untouched for final evaluation.
 
 - **Pros**:
