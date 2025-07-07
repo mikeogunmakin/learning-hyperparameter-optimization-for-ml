@@ -1,1 +1,1 @@
-# Images used it repo
+# Images used in repo
