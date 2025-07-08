@@ -5,6 +5,10 @@
 - It supports:
   - **Random Search** (`rand.suggest`)
   - More advanced methods like **Bayesian optimization** (covered later).
+- to the tune the hyper-parameters of our model with hyperopt we need to:
+  - define a model
+  - define the hyperparameter space
+  - define the objective function we want to minimize
 
 ---
 
@@ -12,6 +16,8 @@
 
 1. **`fmin`** — function to minimize the objective.
 2. **`hp` module** — defines the hyperparameter search space.
+  - the search space can be a dict, a list or a tuple.
+  - the search space can be nested.2
 3. **Search algorithm** — e.g., `rand.suggest` for Random Search.
 
 ---
