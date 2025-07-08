@@ -1,0 +1,45 @@
+# 🔍 Random Search with Scikit-Optimize
+
+## 🧠 Overview
+- Scikit-Optimize (`skopt`) is a Python library mainly for **Bayesian optimization**, but also supports **Random Search** via `dummy_minimize`.
+- Useful when optimizing models beyond Scikit-learn or with custom objective functions.
+- to tune the hyperparameters of our model with scikit optimize, we need to:
+  - define a model
+  - decide which parameter to optimize (define the hyperparamter space)
+  - define the objective function we want to minimise
+    - The objective function is a function that:
+      - Takes a set of hyperparameters as input.
+      - Returns a single numeric value that reflects model performance (to be minimized or maximized).
+      - In hyperparameter tuning, the objective function measures how "good" a set of hyperparameters is — typically using cross-validation performance (like accuracy, RMSE, etc.).
+---
+
+## 🛠 Setup Steps
+
+### 1. **Import Required Tools**
+- From `skopt`:  
+  - `dummy_minimize`: performs Random Search  
+  - `Integer`, `Real`, `Categorical`: define hyperparameter space  
+  - `use_named_args`: utility for argument handling  
+  - `plot_convergence`: to visualise optimization progress
+
+- From Scikit-learn:  
+  - `GradientBoostingClassifier` (or model), `cross_val_score`, `train_test_split`
+
+---
+
+### 2. **Define the Hyperparameter Space**
+- Use:
+  - `Integer(min, max, name="param")` for integer values
+  - `Real(min, max, name="param")` for continuous values
+  - `Categorical([options], name="param")` for categorical choices
+- Combine all into a **list** (not a dictionary like `RandomizedSearchCV`).
+
+---
+
+### 3. **Set Up the Objective Function**
+- Use `use_named_args` to unwrap parameter grid into the objective function.
+- Set hyperparameters using `model.set_params(**params)`.
+- Score model using `cross_val_score(..., cv=3)` on training set.
+- Since `dummy_minimize` **minimizes** the function, return the **negative accuracy**:
+  ```python
+  return -np.mean(cross_val_score(...))
