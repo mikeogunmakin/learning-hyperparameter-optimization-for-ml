@@ -43,3 +43,6 @@
 - Since `dummy_minimize` **minimizes** the function, return the **negative accuracy**:
   ```python
   return -np.mean(cross_val_score(...))
+
+### when to use vs RandomSearchCV()
+- If you're doing simple, one-off tuning with mostly categorical or discrete values, stick with RandomizedSearchCV. But if you're planning to scale or want finer control, skopt is a great choice — even for Random Search.
