@@ -18,7 +18,10 @@
 ## Search Strategies
 - **Grid Search / Random Search**:
   - Generate all combinations up front.
+    - In Grid Search and Random Search, you define a search space for each hyperparameter before the search begins.
+    - Then, all possible (Grid Search) or randomly sampled (Random Search) combinations are generated in advance.
   - Evaluate in parallel.
+    - Since all combinations are already decided, each one can be trained and evaluated independently.
   - Suitable for simple models.
 
 - **Sequential Search**:
@@ -32,8 +35,10 @@
 - Saves **training time**.
 - Spends **more time deciding** where to sample next.
 - Ideal when model training time >> sampling decision time.
+  - i.e. it makes sense when the evaluation procedure(training the model -performance) takes longer than the process of evaluating where to sample next.
 
-## Next Step
-- Introduction to **Bayesian Optimization** in the next video:
-  - A **sequential global optimization strategy**.
-  - Suitable for **expensive, black-box functions**.
+
+## Bayesian Optimization
+- Bayesian optimization is in fact a sequential strategy for the global optimization of black-box functions, and it does not assume any functional form.
+   - It makes no assumptions about the shape, structure, or mathematical formula of the function it's trying to optimise.
+- In fact, Bayesian optimization is usually employed to optimize expensive to evaluate functions.
